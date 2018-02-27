@@ -2,10 +2,7 @@
   "name": "rht-incidentes-criticos-front",
   "version": "0.0.1",
   "description": "An Ionic project",
-  "author": {
-    "Michelle Oliveira da Costa",
-    "Natan da Silva Severo"
-  },
+  "author": "Michelle Oliveira da Costa & Natan da Silva Severo",
   "devDependencies": {
     "gulp": "^3.5.6",
     "gulp-clean-css": "^3.7.0",
@@ -13,7 +10,8 @@
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {
-    "cordova-android": "6.4.0",
+    "cordova-android": "6.3.0",
+    "cordova-browser": "^5.0.3",
     "cordova-plugin-device": "^2.0.1",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.16",
@@ -29,6 +27,7 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
+      "browser",
       "android"
     ]
   }
