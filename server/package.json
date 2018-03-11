@@ -2,7 +2,7 @@
   "name": "server",
   "version": "0.0.1",
   "description": "Backend do projeto de RHT",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,5 +14,14 @@
     "restful"
   ],
   "author": "Natan Severo & Michelle Oliveira",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "helmet": "^3.12.0",
+    "mongoose": "^5.0.9",
+    "morgan": "^1.9.0"
+  }
 }
