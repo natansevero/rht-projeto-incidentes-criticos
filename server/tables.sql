@@ -10,7 +10,7 @@ create table incidente (
 	id_funcionario int,
 	data varchar(10) not null,
 	classificacao varchar(20),
-	palavra_chave varchar(20),
+	tipo varchar(20),
 	titulo varchar(20),
 	descricao varchar(120) not null,
 	primary key(id),

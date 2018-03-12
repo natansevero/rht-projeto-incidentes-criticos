@@ -1,6 +1,7 @@
 module.exports = app => {
     // const IncidentesController = app.controllers.incidente;
 
+    // A requisição vem com  id do funcionario
     app.post('/incidentes')
     
     /* traz todos os incidentes de acordo com os parametros da requisição 
