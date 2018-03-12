@@ -34,11 +34,11 @@
                 <div class="item" ng-reppeat="incidente in incidentes | filter:tipoIncidente == incidente.tipo | filter: incidClassificacao == incidente.classificacao">
                 	<h2><strong>Incidente:</strong> {{incidente.titulo}}</h2>
                 	<h2>
-                    	<strong>Data: </strong>{{incidente.data}}
+                    	<strong>Funcionario:</strong><br/>
+            			{{incidente.funcionario}}
                     </h2>
-                    <h2>
-                    	<strong>Descrição:</strong><br/>
-            			{{incidente.descricao}}
+                	<h2>
+                    	<strong>Data: </strong>{{incidente.data}}
                     </h2>
                 </div>
             </div>

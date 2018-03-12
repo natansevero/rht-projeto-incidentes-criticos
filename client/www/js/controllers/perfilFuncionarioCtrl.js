@@ -1,6 +1,7 @@
 ﻿
-app.controller('perfilFuncionarioCtrl', function($scope, $state) {
-    
+app.controller('perfilFuncionarioCtrl', function($scope, $state, ionicMaterialInk) {
+    ionicMaterialInk.displayEffect();
+
     $scope.funcionario = {
     	"id": 7,
         "name":"Maria Silva",

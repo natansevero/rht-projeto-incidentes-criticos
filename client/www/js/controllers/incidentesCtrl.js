@@ -1,4 +1,5 @@
 
-app.controller('incidentesCtrl', function() {
+app.controller('incidentesCtrl', function(ionicMaterialInk) {
+	ionicMaterialInk.displayEffect();
 	
 });

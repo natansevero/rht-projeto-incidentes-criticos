@@ -50,7 +50,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
 
     .state('app.perfilFuncionario', {
-        url: '/perfilFuncionario',
+        url: '/perfilFuncionario/{idFuncionario}',
         views: {
             'menuContent': {
                 templateUrl: 'templates/perfilFuncionario.html',
