@@ -77,6 +77,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 controller: 'addIncidenteCtrl'
             }
         }
+    })
+
+    .state('app.detalhesIncidente', {
+        url: '/detalhesIncidente',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/detalhesIncidente.html'
+            }
+        }
     });
 
     // if none of the above states are matched, use this as the fallback

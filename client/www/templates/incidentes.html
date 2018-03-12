@@ -5,6 +5,46 @@
             <strong class="title">Ver Incidentes</strong>
         </div>
         <div class="im-wrapper" align="left">
+        	<!-- Filtros para busca de incidentes -->
+        	<label class="item item-input item-select">
+    			<div class="input-label">
+					Filtrar de Tipo:
+				</div>
+    			<select ng-model="tipoIncidente">
+      				<option>Conhecimentos</option>
+				    <option>Habilidades</option>
+				    <option>Atitudes</option>	
+    			</select>
+  			</label><br/>
+  			<label class="item item-input item-select">
+   				<div class="input-label">
+   					Filtro de Classificação:
+    			</div>
+    			<select ng-model="incidClassificacao">
+      				<option>Positivo</option>
+				    <option>Negativo</option>
+    			</select>
+  			</label>
+  			<br/>
+
+  			<!-- Falta filtro de data -->
+
+        	<!-- Resultados -->
+        	<div class="card">
+                <div class="item" ng-reppeat="incidente in incidentes | filter:tipoIncidente == incidente.tipo | filter: incidClassificacao == incidente.classificacao">
+                	<h2><strong>Incidente:</strong> {{incidente.titulo}}</h2>
+                	<h2>
+                    	<strong>Data: </strong>{{incidente.data}}
+                    </h2>
+                    <h2>
+                    	<strong>Descrição:</strong><br/>
+            			{{incidente.descricao}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
 
 		</div>
 	</ion-content>

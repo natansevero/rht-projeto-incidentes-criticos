@@ -1,0 +1,24 @@
+
+<ion-view view-title="Incidentes Críticos" align="center">
+    <ion-content>
+        <div class="bar bar-subheader bar-light static text-center">
+            <strong class="title">Detalhes do Incidente</strong>
+        </div>
+        <div class="im-wrapper" align="center">
+        	<div class="list">
+        		<div class="item item-divider">
+                    <h2>Incidente: {{incidente.titulo}}</h2>
+            	</div>
+                <div class="item">
+                	<h2>
+                    	<strong>Data: </strong>{{incidente.data}}
+                    </h2>
+                    <h2>
+                    	<strong>Descrição:</strong><br/>
+            			{{incidente.descricao}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
