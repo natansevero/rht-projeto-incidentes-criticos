@@ -1,0 +1,24 @@
+﻿
+<ion-view view-title="Incidentes Críticos" align="center">
+    <ion-content>
+        <div class="bar bar-subheader bar-light static text-center">
+            <strong class="title">Adicionar Funcionário</strong>
+        </div>
+        <div class="im-wrapper">
+            <br/>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Funcionário:</span>
+                    <input type="text" ng-model="funcionario.nome">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">Admissão:</span>
+                    <input type="date" ng-model="funcionario.admissao">
+                </label><br/>
+                <button ng-click="addFuncionario()" class="button button-block button-calm-900">
+                    Adicionar
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+﻿
+<ion-view view-title="Incidentes Críticos">
+    <ion-content align="center">
+        <div class="bar bar-subheader bar-light static text-center">
+            <strong class="title">Detalhes do Funcionário</strong>
+        </div>
+        <div class="im-wrapper" align="left">
+            <div class="item item-divider">
+                Dados Pessoais
+            </div>
+            <div class="list">
+                <div class="item">
+                    <h2><strong>Nome: </strong>{{funcionario.name}}</h2>
+                    <h2><strong>Admissão: </strong>{{funcionario.admissao}}</h2>
+                </div>
+            </div>
+            <div class="item item-divider">
+                    Incidentes dos Funcionários
+            </div>
+            <div class="row" align="center">
+                <div class="col-50">
+                        <div class="item item-balanced item-text-wrap">
+                            <h2>60%</h2>
+                        </div>
+                </div>
+                <div class="col-50">                           
+                    <div class="item item-assertive item-text-wrap">
+                        <h2>40%</h2>
+                    </div>
+                </div>
+            </div> 
+            <br/>
+            <button class="button button-calm-900 button-block " ng-click="addIncidente(funcionario.id)">
+                Adicionar Incidentes
+            </button>       
+            <button class="button button-calm-900 button-block">
+                Ver todos os Incidentes
+            </button>       
+        </div>
+    </ion-content>
+</ion-view>

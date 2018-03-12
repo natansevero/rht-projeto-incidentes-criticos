@@ -1,0 +1,45 @@
+<ion-view view-title="Incidentes Críticos" align="center">
+	<ion-content align="center">
+		<div class="bar bar-subheader bar-light static text-center">
+            <strong class="title">Adicionar Incidente</strong>
+        </div>
+        <div class="im-wrapper" align="left">
+            <div class="list">
+            	<label class="item item-input">
+                    <span class="input-label">Título:</span>
+                    <input type="text" ng-model="incidente.titulo">
+                </label>
+            	<label class="item item-input">
+                    <span class="input-label">Data:</span>
+                    <input type="date" ng-model="incidente.data">
+                </label>
+                <label class="item item-input item-select">
+    				<div class="input-label">
+      					Tipo:
+    				</div>
+    				<select ng-model="incidente.tipo">
+      					<option>Conhecimentos</option>
+					    <option>Habilidades</option>
+					    <option>Atitudes</option>	
+    				</select>
+  				</label>
+                <label class="item item-input item-select">
+    				<div class="input-label">
+      					Classificação:
+    				</div>
+    				<select ng-model="incidente.classificacao">
+      					<option>Positivo</option>
+					    <option>Negativo</option>
+    				</select>
+  				</label>
+                <label class="item item-input">
+                    <span class="input-label">Descrição:</span>
+                    <textarea ng-model="incidente.descricao"></textarea>
+                </label>
+                <button ng-click="addIncidente()" class="button button-block button-calm-900">
+                    Adicionar
+                </button>
+            </div>
+        </div>
+	</ion-content>
+</ion-view>

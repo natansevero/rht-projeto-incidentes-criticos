@@ -29,57 +29,56 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         controller: 'AppCtrl'
     })
 
-    .state('app.lists', {
-        url: '/lists',
+    .state('app.addFuncionario', {
+        url: '/addFuncionario',
         views: {
             'menuContent': {
-                templateUrl: 'templates/lists.html',
-                controller: 'ListsCtrl'
+                templateUrl: 'templates/addFuncionario.html',
+                controller: 'addFuncionarioCtrl'
             }
         }
     })
 
-    .state('app.ink', {
-        url: '/ink',
+    .state('app.funcionarios', {
+        url: '/funcionarios',
         views: {
             'menuContent': {
-                templateUrl: 'templates/ink.html',
-                controller: 'InkCtrl'
+                templateUrl: 'templates/funcionarios.html',
+                controller: 'funcionariosCtrl'
             }
         }
     })
 
-    .state('app.motion', {
-        url: '/motion',
+    .state('app.perfilFuncionario', {
+        url: '/perfilFuncionario',
         views: {
             'menuContent': {
-                templateUrl: 'templates/motion.html',
-                controller: 'MotionCtrl'
+                templateUrl: 'templates/perfilFuncionario.html',
+                controller: 'perfilFuncionarioCtrl'
             }
         }
     })
 
-    .state('app.components', {
-        url: '/components',
+    .state('app.incidentes', {
+        url:'/incidentes',
         views: {
             'menuContent': {
-                templateUrl: 'templates/components.html',
-                controller: 'ComponentsCtrl'
+                templateUrl: 'templates/incidentes.html',
+                controller: 'incidentesCtrl'
             }
         }
     })
 
-    .state('app.extensions', {
-        url: '/extensions',
+    .state('app.addIncidente', {
+        url: '/addIncidente/{idFuncionario}',
         views: {
             'menuContent': {
-                templateUrl: 'templates/extensions.html',
-                controller: 'ExtensionsCtrl'
+                templateUrl: 'templates/addIncidente.html',
+                controller: 'addIncidenteCtrl'
             }
         }
-    })
-    ;
+    });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/components');
+    $urlRouterProvider.otherwise('/app/funcionarios');
 });

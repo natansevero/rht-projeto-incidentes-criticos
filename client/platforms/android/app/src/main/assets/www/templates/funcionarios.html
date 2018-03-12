@@ -1,0 +1,26 @@
+﻿
+<ion-view view-title="Incidentes Críticos" align="center">
+    <ion-content>
+        <div class="bar bar-subheader bar-light static text-center">
+            <strong class="title">Todos os Funcionários</strong>
+        </div>
+        <div class="im-wrapper">
+            <div class="list">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" ng-model="filterParam" placeholder="Buscar Funcionário">
+                </label>
+            </div>
+            <ul class="list">
+                <li class="item" ng-click="funcDetails(funcionario.id)" ng-repeat="funcionario in funcionarios | filter: filterParam">
+                    {{funcionario.name}}    
+                </li>
+            </ul>
+        </div>
+    </ion-content>
+    <ion-footer-bar>
+        <button id="fab" class="button button-calm-900 button-fab button-fab-bottom-right">
+            <i class="icon ion-plus"></i>  
+        </button>
+    </ion-footer-bar>
+</ion-view>
