@@ -1,9 +1,14 @@
-const mongoose = require('mongoose')
+const { Pool } = require('pg');
+const connString = 'postgres://postgres:12345@localhost:5432/IncidentesCriticosRHT';
+
 let single_connection;
-let url = 'mongodb://localhost/incidentes-criticos-rht';
 
 module.exports = app => {
-    if(!single_connection) single_connection = mongoose.connect(url)
+    if(!single_connection){
+        const pool = new Pool({
+            connectionString: connString
+        })
 
-    return single_connection;
+        return pool.connect();
+    }    
 }
