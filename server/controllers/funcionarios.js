@@ -47,6 +47,28 @@ module.exports = app => {
 
                 return res.status(200).json(constructResponse);
             })
+        },
+
+        update: (req, res) => {
+            let funcionario = {
+                id: req.params.id,
+                nome: req.body.nome,
+                data_admissao: req.body.data_admissao 
+            }
+
+            FuncionariosModel.update(funcionario, (err, result) => {
+                if(err) return res.status(500).json({ "Error ": err })
+                return res.status(200).json(result);
+            })
+        },
+
+        delete: (req, res) => {
+            let id = req.params.id
+
+            FuncionariosModel.delete(id, (err, result) => {
+                if(err) return res.status(500).json({ "Error ": err })
+                return res.status(200).json(result);
+            })
         }
     } 
 

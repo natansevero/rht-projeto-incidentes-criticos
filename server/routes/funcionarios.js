@@ -10,7 +10,7 @@ module.exports = app => {
     // traz um funcionario pelo id (traz a porcetagem de indicides tbm)
     app.get('/funcionarios/:id', FuncionariosController.getOne)
     
-    app.put('/funcionarios/:id')
+    app.put('/funcionarios/:id', FuncionariosController.update)
     
-    app.delete('/funcionarios/:id')
+    app.delete('/funcionarios/:id', FuncionariosController.delete)
 }

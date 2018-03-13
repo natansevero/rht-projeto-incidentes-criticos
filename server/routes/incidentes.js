@@ -1,8 +1,18 @@
 module.exports = app => {
-    // const IncidentesController = app.controllers.incidente;
+    const IncidentesController = app.controllers.incidente;
 
-    // A requisição vem com  id do funcionario
-    app.post('/incidentes')
+    // A requisição vem com id do funcionario
+    /*
+        {
+            id_funcionario,
+            data,
+            classificacao,
+            tipo,
+            titulo,
+            descricao
+        } 
+    */
+    app.post('/incidentes', IncidentesController.create)
     
     /* traz todos os incidentes de acordo com os parametros da requisição 
     (endpoint para a tela de busca) */
