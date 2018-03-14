@@ -30,7 +30,7 @@ app.controller('funcionariosCtrl', function ($scope, $state, ionicMaterialInk) {
     ];
 
     $scope.funcDetails = function(id) {
-        $state.go("app.perfilFuncionario/");
+        $state.go("app.perfilFuncionario", {"idFuncionario": id});
     };
 
     // Tela de Cadastro de Funcionario

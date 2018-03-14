@@ -50,7 +50,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
 
     .state('app.perfilFuncionario', {
-        url: '/perfilFuncionario',
+        url: '/perfilFuncionario/{idFuncionario}',
         views: {
             'menuContent': {
                 templateUrl: 'templates/perfilFuncionario.html',
@@ -59,12 +59,31 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
 
+    .state('app.incidentes', {
+        url:'/incidentes',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/incidentes.html',
+                controller: 'incidentesCtrl'
+            }
+        }
+    })
+
     .state('app.addIncidente', {
-        url: '/addIncidente',
+        url: '/addIncidente/{idFuncionario}',
         views: {
             'menuContent': {
                 templateUrl: 'templates/addIncidente.html',
                 controller: 'addIncidenteCtrl'
+            }
+        }
+    })
+
+    .state('app.detalhesIncidente', {
+        url: '/detalhesIncidente',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/detalhesIncidente.html'
             }
         }
     });
