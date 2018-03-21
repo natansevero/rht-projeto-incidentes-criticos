@@ -21,13 +21,20 @@ module.exports = app => {
         },
 
         getAll: (req, res) => {
+            IncidentesModel.getAll((err, result) => {
+                if(err) return res.status(500).json({ "Error " : err })
+                return res.status(200).json(result.rows)
+            })
+        },
+
+        getAllWithParams: (req, res) => {
             let parametros = {
                 data: req.query.data,
                 classificacao: req.query.classificacao,
                 tipo: req.query.tipo
             }
 
-            IncidentesModel.getAll(parametros, (err, result) => {
+            IncidentesModel.getAllWithParams(parametros, (err, result) => {
                 if(err) return res.status(500).json({ "Error " : err })
 
                 if(result.rows.length == 0) {

@@ -16,6 +16,14 @@ module.exports = app => {
             })
         },
 
+        getOneAlternative: (id, callback) => {
+            conn.then(client => {
+                client.query('select * from funcionario where id = $1', 
+                    [id], 
+                    callback)
+            })
+        },
+
         getOne: (id, callback) => {
             conn.then(client => {
                 client.query('select f.id, f.nome, f.data_admissao, i.classificacao from funcionario f, incidente i where f.id = $1 and f.id = i.id_funcionario',
