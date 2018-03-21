@@ -19,8 +19,10 @@ module.exports = app => {
     /*
             /incidentes?data=23/09/1290&classificacao=Positivo&tipo=Conhecimentos
     */
-    app.get('/incidentes', IncidentesController.getAll)
+    //app.get('/incidentes', IncidentesController.getAllWithParams)
     
+    app.get('/incidentes', IncidentesController.getAll)
+
     // Traz um incidente pelo id (traz o nome do funcionario tbm)
     app.get('/incidentes/:id', IncidentesController.getOne)
     

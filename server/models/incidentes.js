@@ -11,7 +11,15 @@ module.exports = app => {
             })
         },
 
-        getAll: (parametros, callback) => {
+        getAll: (callback) => {
+            conn.then(client => {
+                client.query(`select i.titulo, f.nome, i.classificacao, i.tipo, i.data
+                    from funcionario f, incidente i`,
+                    callback)
+            })
+        },
+
+        getAllWithParams: (parametros, callback) => {
             // 23/09/1290 Positivo Conhecimentos
 
             conn.then(client => {
