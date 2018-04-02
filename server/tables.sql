@@ -9,10 +9,10 @@ create table incidente (
 	id serial,
 	id_funcionario int,
 	data varchar(10) not null,
-	classificacao varchar(20),
-	tipo varchar(20),
-	titulo varchar(20),
-	descricao varchar(120) not null,
+	classificacao varchar(50),
+	tipo varchar(50),
+	titulo varchar(100),
+	descricao varchar(250) not null,
 	primary key(id),
 	foreign key(id_funcionario) references funcionario(id)
 );
