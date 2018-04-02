@@ -1,8 +1,8 @@
-insert into funcionario(nome, data_admisao) values ('Natan Severo', '26/03/2018');
-insert into funcionario(nome, data_admisao) values ('Michelle Oliveira', '20/02/2018');
-insert into funcionario(nome, data_admisao) values ('Lucas Duete', '10/01/2018');
-insert into funcionario(nome, data_admisao) values ('Alexa Lins', '14/09/2017');
-insert into funcionario(nome, data_admisao) values ('Rodrigo Bento', '10/09/2017');
+insert into funcionario(nome, data_admissao) values ('Natan Severo', '26/03/2018');
+insert into funcionario(nome, data_admissao) values ('Michelle Oliveira', '20/02/2018');
+insert into funcionario(nome, data_admissao) values ('Lucas Duete', '10/01/2018');
+insert into funcionario(nome, data_admissao) values ('Alexa Lins', '14/09/2017');
+insert into funcionario(nome, data_admissao) values ('Rodrigo Bento', '10/09/2017');
 
 -- Classificacap => Positivo, Negativo / Tipo => Conhecimentos, Habilidades, Atitudes
 --1

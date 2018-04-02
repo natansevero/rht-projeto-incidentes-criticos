@@ -15,6 +15,9 @@
   ],
   "author": "Natan Severo & Michelle Oliveira",
   "license": "MIT",
+  "engines": {
+    "node": "6.10.2"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "consign": "^0.1.6",
