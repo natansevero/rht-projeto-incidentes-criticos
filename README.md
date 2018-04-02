@@ -9,9 +9,9 @@ A elaboração deste aplicativo fez parte da obtenção de uma das notas do comp
 Registrar incidentes críticos e prover um *feedback* (para avaliação de desempenho dos funcionários) em um período de tempo, tipo de incidente  ocorrido e caracterização do incidente (positivo ou negativo).
 
 # Sobre o tema do aplicativo
-Segundo Sarmento *et al.* (2015), incidentes críticos é um método que se baseia-se nas caracteristias extremas, incidentes críticos, que representam desempenhos altamente positivos ou altamente negativos.
+Segundo Sarmento *et al.* (2015, p. 95), incidentes críticos é um método que se baseia-se nas caracteristias extremas, incidentes críticos, que representam desempenhos altamente positivos ou altamente negativos.
 
-Segundo Hanashiro *et al.* (2008), esse método permite que o avaliador determine pontos fortes e fracos do avaliador.
+Segundo Hanashiro *et al.* (2008, p. 299), esse método permite que o avaliador determine pontos fortes e fracos do avaliador.
 
 Este método pode indentificar aspectos do trabalho sobre os quais deve incidir avaliação.
 
