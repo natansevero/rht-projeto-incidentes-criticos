@@ -28,12 +28,26 @@
     			</select>
   			</label>
   			<br/>
+        <div class="item item-divider">
+          <p> Busca por período:
+        </div>
+        <div class="row">
+            <label class="item item-input">
+              Inicio: <input type="date" ng-model="dataInicio">
+            </label>
+            <label class="item item-input">
+              Fim: <input type="date" ng-model="dataFim">
+            </label>
+          </div>
+        </div>
 
   			<!-- Falta filtros -->
 
         	<!-- Resultados -->
-        	<div class="card" ng-repeat="incidente in incidentes | filter:{tipo:tipoIncidente}
-                  | filter:{classificacao: incidClassificacao}">
+        	<div class="card" ng-repeat="incidente in incidentes 
+                  | filter:{tipo:tipoIncidente}
+                  | filter:{classificacao: incidClassificacao}
+                  | incidentesData:dataInicio:dataFim">
                 <div class="item">
                 	<h2><strong>Incidente:</strong> {{incidente.titulo}}</h2>
                 	<h2>
@@ -45,12 +59,14 @@
                 </div>
                 <div class="row">
                   <div class="col-50">
-                    <button class="button button-balanced button-small" ng-click="detalhesIncidente(incidente.id)">
+                    <button class="button button-balanced button-small" 
+                    ng-click="detalhesIncidente(incidente.id)">
                       Detalhes
                     </button>
                   </div>
                   <div class="col-50">
-                    <button class="button button-assertive button-small" ng-click="removeIncidente(incidente.id)">
+                    <button class="button button-assertive button-small" 
+                    ng-click="removeIncidente(incidente.id)">
                       Remover
                     </button>
                   </div>
