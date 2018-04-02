@@ -20,6 +20,15 @@ module.exports = app => {
             })
         },
 
+        delete: (req, res) => {
+            let id = req.params.id;
+
+            IncidentesModel.delete(id, (err, result) => {
+                if(err) return res.status(500).json({ "Error " : err })
+                return res.status(200).json(result.rows)
+            })
+        },
+
         getAll: (req, res) => {
             IncidentesModel.getAll((err, result) => {
                 if(err) return res.status(500).json({ "Error " : err })

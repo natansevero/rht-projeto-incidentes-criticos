@@ -15,7 +15,7 @@ app.controller('perfilFuncionarioCtrl', function($scope, $state, $stateParams, $
     $http.get(apiUrl + "/funcionarios/" + idFunc)
     .then(
         function(resp) {
-            console.log("Sucesso ao recuperar: " + resp.data);
+            console.log(resp.data);
             $scope.funcionario = resp.data;
         }, function(erro) {
             console.log("Erro: " + erro);

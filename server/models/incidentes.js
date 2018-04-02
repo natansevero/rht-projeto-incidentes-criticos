@@ -11,10 +11,18 @@ module.exports = app => {
             })
         },
 
+        delete: (id_incidente, callback) => {
+            conn.then(client => {
+                client.query(`delete from incidente where id = $1`,
+                    [id_incidente], callback)
+            })
+        },
+
+
         getAll: (callback) => {
             conn.then(client => {
-                client.query(`select i.titulo, f.nome, i.classificacao, i.tipo, i.data
-                    from funcionario f, incidente i`,
+                client.query(`select i.id, i.titulo, f.nome, i.classificacao, i.tipo, i.data
+                    from funcionario f join incidente i on f.id = i.id_funcionario`,
                     callback)
             })
         },

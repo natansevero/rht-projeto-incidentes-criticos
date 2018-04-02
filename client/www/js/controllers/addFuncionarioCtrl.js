@@ -7,7 +7,7 @@ app.controller('addFuncionarioCtrl', function ($scope, $http, $state, $filter, i
         $scope.funcionario.data_admissao = $filter("dateFormat")($scope.funcionario.data_admissao);
         console.log($scope.funcionario.data_admissao);
 
-    	// Chamada HTTP para lista de Funcionarios
+    	// Chamada HTTP para add a lista de  Funcionarios
     	$http({
     		"method": "POST",
     		"url": apiUrl + "/funcionarios",

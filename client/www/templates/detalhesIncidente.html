@@ -5,24 +5,29 @@
             <strong class="title">Detalhes do Incidente</strong>
         </div>
         <div class="im-wrapper" align="center">
-        	<div class="list">
-        		<div class="item item-divider">
-                    <h2><strong>Incidente: </strong> {{incidente.titulo}}</h2>
+        	<div class="">
+        		<div class="item item-divider calm-900">
+                    <h1><strong>{{incid.titulo}}</strong></h1>
             	</div>
-                <div class="item">
+                <div class="item" align="left">
                 	<h2>
-                    	<strong>Data: </strong>{{incidente.data}}
+                    	<strong>Data: </strong> {{incid.data}}<br/> 
                     </h2>
                     <h2>
-                        <strong>Funcionario:</strong><br/>
-                        {{incidente.funcionario}}
+                        <strong>Funcionario: </strong>{{incid.nome}}<br/> 
                     </h2>
                     <h2>
-                    	<strong>Descrição:</strong><br/>
-            			{{incidente.descricao}}
+                        <strong>Classificação: </strong>{{incid.classificacao}}<br/> 
+                    </h2>
+                    <h2>
+                        <strong>Tipo: </strong>{{incid.tipo}}<br/> 
+                    </h2>
+                    <h2>
+                    	<strong>Descrição: </strong>{{incid.descricao}}<br/> 
                     </h2>
                 </div>
-            </div>
+            </div>    
+            <button class="button button-calm-900 button-block" ng-click="voltar()">Voltar</button>
         </div>
     </ion-content>
 </ion-view>

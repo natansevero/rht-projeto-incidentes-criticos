@@ -11,7 +11,8 @@
 					Filtrar de Tipo:
 				</div>
     			<select ng-model="tipoIncidente">
-      				<option>Conhecimentos</option>
+            <option></option>
+      			<option>Conhecimentos</option>
 				    <option>Habilidades</option>
 				    <option>Atitudes</option>	
     			</select>
@@ -21,25 +22,39 @@
    					Filtro de Classificação:
     			</div>
     			<select ng-model="incidClassificacao">
-      				<option>Positivo</option>
+            <option></option>
+      			<option>Positivo</option>
 				    <option>Negativo</option>
     			</select>
   			</label>
   			<br/>
 
-  			<!-- Falta filtro de data -->
+  			<!-- Falta filtros -->
 
         	<!-- Resultados -->
-        	<div class="card">
-                <div class="item" ng-reppeat="incidente in incidentes | filter:tipoIncidente == incidente.tipo | filter: incidClassificacao == incidente.classificacao">
+        	<div class="card" ng-repeat="incidente in incidentes | filter:{tipo:tipoIncidente}
+                  | filter:{classificacao: incidClassificacao}">
+                <div class="item">
                 	<h2><strong>Incidente:</strong> {{incidente.titulo}}</h2>
                 	<h2>
-                    	<strong>Funcionario:</strong><br/>
-            			{{incidente.funcionario}}
-                    </h2>
-                	<h2>
+                    	<strong>Funcionario:</strong>{{incidente.nome}}
+                  </h2>
+                	<!-- <h2>
                     	<strong>Data: </strong>{{incidente.data}}
-                    </h2>
+                    </h2> -->
+                </div>
+                <div class="row">
+                  <div class="col-50">
+                    <button class="button button-balanced button-small" ng-click="detalhesIncidente(incidente.id)">
+                      Detalhes
+                    </button>
+                  </div>
+                  <div class="col-50">
+                    <button class="button button-assertive button-small" ng-click="removeIncidente(incidente.id)">
+                      Remover
+                    </button>
+                  </div>
+                </div>
                 </div>
             </div>
         </div>

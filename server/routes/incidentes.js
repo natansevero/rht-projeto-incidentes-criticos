@@ -23,6 +23,8 @@ module.exports = app => {
     
     app.get('/incidentes', IncidentesController.getAll)
 
+    app.delete('/incidentes/:id', IncidentesController.delete)
+
     // Traz um incidente pelo id (traz o nome do funcionario tbm)
     app.get('/incidentes/:id', IncidentesController.getOne)
     
