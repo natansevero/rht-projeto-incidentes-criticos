@@ -10,8 +10,8 @@
             </div>
             <div class="list">
                 <div class="item">
-                    <h2><strong>Nome: </strong>{{funcionario.name}}</h2>
-                    <h2><strong>Admissão: </strong>{{funcionario.admissao}}</h2>
+                    <h2><strong>Nome: </strong>{{funcionario.nome}}</h2>
+                    <h2><strong>Admissão: </strong>{{funcionario.data_admissao}}</h2>
                 </div>
             </div>
             <div class="item item-divider">
@@ -20,12 +20,12 @@
             <div class="row" align="center">
                 <div class="col-50">
                         <div class="item item-balanced item-text-wrap">
-                            <h2>{{funcionario.positivo}}%</h2>
+                            <h2>{{funcionario.porcentagens.positivo}}%</h2>
                         </div>
                 </div>
                 <div class="col-50">                           
                     <div class="item item-assertive item-text-wrap">
-                        <h2>{{funcionario.negativo}}%</h2>
+                        <h2>{{funcionario.porcentagens.negativo}}%</h2>
                     </div>
                 </div>
             </div> 

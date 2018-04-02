@@ -1,17 +1,24 @@
 ﻿
-app.controller('perfilFuncionarioCtrl', function($scope, $state, ionicMaterialInk) {
+app.controller('perfilFuncionarioCtrl', function($scope, $state, $stateParams, $http, ionicMaterialInk) {
     ionicMaterialInk.displayEffect();
 
-    $scope.funcionario = {
-    	"id": 7,
-        "name":"Maria Silva",
-        "admissao": "2013-02-14",
-        "positivo": "50",
-        "negativo": "50"
-    };
+    // Variaveis
+    var idFunc = $stateParams["idFuncionario"];
+    $scope.funcionario = {};
 
+    // Adiciona incidente ao funcionario
     $scope.addIncidente = function(idFunc) {
     	$state.go("app.addIncidente", {"idFuncionario": idFunc});
     };
 
+    // Chamada http para recuperar o funcionario pelo id
+    $http.get(apiUrl + "/funcionarios/" + idFunc)
+    .then(
+        function(resp) {
+            console.log("Sucesso ao recuperar: " + resp.data);
+            $scope.funcionario = resp.data;
+        }, function(erro) {
+            console.log("Erro: " + erro);
+        }
+    );
 });
