@@ -33,7 +33,7 @@
                 </div>
             </div>
             <br/>      
-            <button class="button button-calm-900 button-block" ng-click="">
+            <button class="button button-calm-900 button-block" ng-if="funcionario.porcentagens" ng-click="incidentesFuncionario()">
                 Ver todos os Incidentes
             </button>      
             <button class="button button-calm-900 button-block " ng-click="addIncidente(funcionario.id)">

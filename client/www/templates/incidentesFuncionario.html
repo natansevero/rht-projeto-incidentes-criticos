@@ -5,6 +5,10 @@
             <strong class="title">Ver Incidentes</strong>
         </div>
 
+        <div class="item">
+          <h2 class="calm-900"><strong>Funcionário:</strong> {{nomeFuncionario}}</h2>
+        </div>
+
         <div class="im-wrapper" align="left">
         	<!-- Filtros para busca de incidentes -->
           <label class="item item-input item-select">
@@ -30,29 +34,13 @@
     			</select>
   			</label>
   			<br/>
-        <div class="item item-divider">
-          <p> Filtro por período:
-        </div>
-        <div class="row">
-            <label class="item item-input">
-              Inicio: <input type="date" ng-model="dataInicio">
-            </label>
-            <label class="item item-input">
-              Fim: <input type="date" ng-model="dataFim">
-            </label>
-          </div>
-        </div>
-        
+
         	<!-- Resultados -->
         	<div class="card" ng-repeat="incidente in incidentes 
                   | filter:{tipo:tipoIncidente}
-                  | filter:{classificacao: incidClassificacao}
-                  | incidentesData:dataInicio:dataFim">
-                <div class="item item-text-wrapper" align="left">
+                  | filter:{classificacao: incidClassificacao}">
+                <div class="item item-text-wrapper">
                 	<h2><strong>Incidente:</strong> {{incidente.titulo}}</h2>
-                	<h2>
-                    	<strong>Funcionario:</strong>{{incidente.nome}}
-                  </h2>
                 	<h2>
                     	<strong>Data: </strong>{{incidente.data}}
                     </h2>

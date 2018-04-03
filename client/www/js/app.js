@@ -99,6 +99,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         cache:false
     })
 
+    .state('app.incidentesFuncionario', {
+        url: '/incidentesFuncionario/{incidente}',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/incidentesFuncionario.html',
+                controller: 'incidentesFuncionarioCtrl'
+            }
+        },
+        cache:false
+    })
+
+
     .state('app.about_incidentes', {
         url: '/about_incidentes',
         views: {

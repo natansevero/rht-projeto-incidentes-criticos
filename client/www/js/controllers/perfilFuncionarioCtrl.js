@@ -12,6 +12,23 @@ app.controller('perfilFuncionarioCtrl', function($scope, $state, $stateParams, $
     	$state.go("app.addIncidente", {"idFuncionario": idFunc});
     };
 
+    $scope.incidentesFuncionario = function() {
+        localStorage.setItem('nomeFuncionario', $scope.funcionario.nome);
+        $state.go("app.incidentesFuncionario", {"incidente": idFunc});
+        
+        // if ($scope.funcionario.porcentagens) {
+        //     $state.go("app.incidentesFuncionario", {"incidente": idFunc});
+        // } else {
+        //     $ionicPopup.show({
+        //         template: 'O funcionário não possui incidentes!', 
+        //         buttons: [{ 
+        //             text: 'OK',
+        //             type: 'button-positive'
+        //         }]
+        //     });
+        // }
+    }
+
     $scope.removeFuncionario = function() {
         
         $http.delete(apiUrl + "/funcionarios/" + idFunc).then(
@@ -40,13 +57,18 @@ app.controller('perfilFuncionarioCtrl', function($scope, $state, $stateParams, $
         
     }
 
+
     // Chamada http para recuperar o funcionario pelo id
     $http.get(apiUrl + "/funcionarios/" + idFunc)
     .then(
         function(resp) {
-            console.log(resp.data);
             $scope.funcionario = resp.data;
 
+            if ($scope.funcionario.porcentagens) {
+                $scope.funcionario.porcentagens.positivos = parseFloat($scope.funcionario.porcentagens.positivos.toFixed(2));
+                $scope.funcionario.porcentagens.negativos = parseFloat($scope.funcionario.porcentagens.negativos.toFixed(2));
+            }
+                
         }, function(erro) {
             $ionicPopup.show({
                 title: 'Erro!',
