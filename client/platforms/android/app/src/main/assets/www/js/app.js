@@ -5,6 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', ['ionic', 'ionic-material']);
 
+// var apiUrl = "http://localhost:3000";
+var apiUrl = "https://rht-incidentes-criticos.herokuapp.com";
+
 app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -26,7 +29,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         url: '/app',
         abstract: true,
         templateUrl: 'templates/menu.html',
-        controller: 'AppCtrl'
+        controller: 'AppCtrl',
+        cache:false
     })
 
     .state('app.addFuncionario', {
@@ -36,7 +40,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'templates/addFuncionario.html',
                 controller: 'addFuncionarioCtrl'
             }
-        }
+        },
+        cache:false
     })
 
     .state('app.funcionarios', {
@@ -46,7 +51,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'templates/funcionarios.html',
                 controller: 'funcionariosCtrl'
             }
-        }
+        },
+        cache:false
     })
 
     .state('app.perfilFuncionario', {
@@ -56,7 +62,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'templates/perfilFuncionario.html',
                 controller: 'perfilFuncionarioCtrl'
             }
-        }
+        },
+        cache:false
     })
 
     .state('app.incidentes', {
@@ -66,7 +73,8 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'templates/incidentes.html',
                 controller: 'incidentesCtrl'
             }
-        }
+        },
+        cache:false
     })
 
     .state('app.addIncidente', {
@@ -76,14 +84,35 @@ app.config(function ($stateProvider, $urlRouterProvider) {
                 templateUrl: 'templates/addIncidente.html',
                 controller: 'addIncidenteCtrl'
             }
-        }
+        },
+        cache:false
     })
 
     .state('app.detalhesIncidente', {
-        url: '/detalhesIncidente',
+        url: '/detalhesIncidente/{incidente}',
         views: {
             'menuContent': {
-                templateUrl: 'templates/detalhesIncidente.html'
+                templateUrl: 'templates/detalhesIncidente.html',
+                controller: 'detalheIncidenteCtrl'
+            }
+        },
+        cache:false
+    })
+
+    .state('app.about_incidentes', {
+        url: '/about_incidentes',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/about_incidentes.html'
+            }
+        }
+    })
+
+    .state('app.about_app', {
+        url: '/about_app',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/about_app.html'
             }
         }
     });

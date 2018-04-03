@@ -1,6 +1,6 @@
 {
-  "name": "rht-incidentes-criticos-front",
-  "app_id": "",
+  "name": "Incidentes Criticos",
+  "app_id": "br.edu.ifpb.rht.incidentes.criticos",
   "type": "ionic1",
   "integrations": {
     "gulp": {},

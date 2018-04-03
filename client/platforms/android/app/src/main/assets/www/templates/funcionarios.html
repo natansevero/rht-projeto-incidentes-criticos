@@ -13,14 +13,14 @@
             </div>
             <ul class="list">
                 <li class="item" ng-click="funcDetails(funcionario.id)" ng-repeat="funcionario in funcionarios | filter: filterParam">
-                    {{funcionario.name}}    
+                    {{funcionario.nome}}    
                 </li>
             </ul>
         </div>
     </ion-content>
     <ion-footer-bar>
         <button id="fab" class="button button-calm-900 button-fab button-fab-bottom-right">
-            <i class="icon ion-plus"></i>  
+            <i class="icon ion-person-add"></i>  
         </button>
     </ion-footer-bar>
 </ion-view>

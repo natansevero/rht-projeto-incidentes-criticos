@@ -10,32 +10,38 @@
             </div>
             <div class="list">
                 <div class="item">
-                    <h2><strong>Nome: </strong>{{funcionario.name}}</h2>
-                    <h2><strong>Admissão: </strong>{{funcionario.admissao}}</h2>
+                    <h2><strong></i>Nome: </strong>{{funcionario.nome}}</h2>
+                    <h2><strong>Admissão: </strong>{{funcionario.data_admissao}}</h2>
                 </div>
             </div>
             <div class="item item-divider">
                     Incidentes dos Funcionários
             </div>
-            <div class="row" align="center">
+            <div class="item item-calm item-text-wrap" ng-if="!funcionario.porcentagens">
+                <p>Não existem incidentes para esse funcionário.</p>
+            </div>
+            <div class="row" align="center" ng-if="funcionario.porcentagens">
                 <div class="col-50">
                         <div class="item item-balanced item-text-wrap">
-                            <h2>{{funcionario.positivo}}%</h2>
+                            <h2>{{funcionario.porcentagens.positivos}}%</h2>
                         </div>
                 </div>
                 <div class="col-50">                           
                     <div class="item item-assertive item-text-wrap">
-                        <h2>{{funcionario.negativo}}%</h2>
+                        <h2>{{funcionario.porcentagens.negativos}}%</h2>
                     </div>
                 </div>
-            </div> 
-            <br/>
-            <button class="button button-calm-900 button-block " ng-click="addIncidente(funcionario.id)">
-                Adicionar Incidentes
-            </button>       
-            <button class="button button-calm-900 button-block">
+            </div>
+            <br/>      
+            <button class="button button-calm-900 button-block" ng-click="">
                 Ver todos os Incidentes
-            </button>       
+            </button>      
+            <button class="button button-calm-900 button-block " ng-click="addIncidente(funcionario.id)">
+                Adicionar Incidente
+            </button> 
+            <button class="button button-calm-900 button-block" ng-click="removeFuncionario()">
+                Excluir funcionário
+            </button>   
         </div>
     </ion-content>
 </ion-view>
