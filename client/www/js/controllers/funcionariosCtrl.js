@@ -1,5 +1,5 @@
 ﻿
-app.controller('funcionariosCtrl', function ($scope, $state, $http, ionicMaterialInk) {
+app.controller('funcionariosCtrl', function ($scope, $state, $http, $ionicPopup, ionicMaterialInk) {
     ionicMaterialInk.displayEffect();
 
     // Variáveis do Escopo
@@ -19,10 +19,25 @@ app.controller('funcionariosCtrl', function ($scope, $state, $http, ionicMateria
     // Chamada HTTP para lista de Funcionarios
     $http.get(apiUrl + "/funcionarios")
         .then(function(resp) {
-            console.log("Sucesso: " + resp.data);
+            // $ionicPopup.show({
+            //     title: 'Sucesso!',
+            //     template: 'Lista de funcionários encontra-se disponível!',
+            //     buttons: [{ 
+            //         text: 'OK',
+            //         type: 'button-positive'
+            //     }]
+            // });
             $scope.funcionarios = resp.data;
+
         }, function(erro) {
-            console.log("Erro: " + erro);
+            $ionicPopup.show({
+                title: 'Erro!',
+                template: 'Não conseguimos encontrar Lista de funcionários no momento!',
+                buttons: [{ 
+                    text: 'OK',
+                    type: 'button-assertive'
+                }]
+            });
         }
     );
 

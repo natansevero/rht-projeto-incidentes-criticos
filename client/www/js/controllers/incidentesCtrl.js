@@ -1,5 +1,5 @@
 
-app.controller('incidentesCtrl', function($scope, $state, $stateParams, $http, ionicMaterialInk) {
+app.controller('incidentesCtrl', function($scope, $state, $stateParams, $http, $ionicPopup, ionicMaterialInk) {
 	ionicMaterialInk.displayEffect();
 	
 	$scope.incidentes = [];
@@ -21,10 +21,19 @@ app.controller('incidentesCtrl', function($scope, $state, $stateParams, $http, i
 	// Chamada HTTP para lista de Funcionarios
     function atualiza_lista() {
         $http.get(apiUrl + "/incidentes")
-        .then(function(resp) {
+        .then(
+            function(resp) {
                 $scope.incidentes = resp.data;
-            }, function(erro) {
-                console.log("Erro: " + erro);
+            }, 
+            function(erro) {
+                $ionicPopup.show({
+                    title: 'Erro!',
+                    template: 'Não conseguimos encontrar Lista de funcionários no momento!',
+                    buttons: [{ 
+                        text: 'OK',
+                        type: 'button-assertive'
+                    }]
+                });
             }
         );
     }

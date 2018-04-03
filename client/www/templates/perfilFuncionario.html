@@ -10,7 +10,7 @@
             </div>
             <div class="list">
                 <div class="item">
-                    <h2><strong>Nome: </strong>{{funcionario.nome}}</h2>
+                    <h2><strong></i>Nome: </strong>{{funcionario.nome}}</h2>
                     <h2><strong>Admissão: </strong>{{funcionario.data_admissao}}</h2>
                 </div>
             </div>
@@ -32,13 +32,16 @@
                     </div>
                 </div>
             </div>
-            <br/>
-            <button class="button button-calm-900 button-block " ng-click="addIncidente(funcionario.id)">
-                Adicionar Incidentes
-            </button>       
-            <button class="button button-calm-900 button-block">
+            <br/>      
+            <button class="button button-calm-900 button-block" ng-click="">
                 Ver todos os Incidentes
-            </button>       
+            </button>      
+            <button class="button button-calm-900 button-block " ng-click="addIncidente(funcionario.id)">
+                Adicionar Incidente
+            </button> 
+            <button class="button button-calm-900 button-block" ng-click="removeFuncionario()">
+                Excluir funcionário
+            </button>   
         </div>
     </ion-content>
 </ion-view>

@@ -5,26 +5,24 @@
             <strong class="title">Detalhes do Incidente</strong>
         </div>
         <div class="im-wrapper" align="center">
-        	<div class="">
-        		<div class="item item-divider calm-900">
-                    <h1><strong>{{incid.titulo}}</strong></h1>
-            	</div>
-                <div class="item" align="left">
-                	<h2>
-                    	<strong>Data: </strong> {{incid.data}}<br/> 
-                    </h2>
-                    <h2>
-                        <strong>Funcionario: </strong>{{incid.nome}}<br/> 
-                    </h2>
-                    <h2>
-                        <strong>Classificação: </strong>{{incid.classificacao}}<br/> 
-                    </h2>
-                    <h2>
-                        <strong>Tipo: </strong>{{incid.tipo}}<br/> 
-                    </h2>
-                    <h2>
-                    	<strong>Descrição: </strong>{{incid.descricao}}<br/> 
-                    </h2>
+            <div class="padding">
+                <div class="item-text-wrapper" align="center">
+                    <h2 class="calm-900"><strong>{{incid.titulo}}</strong></h2>
+
+                	<h5><strong>Data:</strong></h5>
+                    <p>{{incid.data}}</p>
+
+                    <h5><strong>Funcionario:</strong></h5>
+                    <p>{{incid.nome}}</p>
+
+                    <h5><strong>Classificação:</strong></h5>
+                    <p>{{incid.classificacao}}</p>
+
+                    <h5><strong>Tipo: </strong></h5>
+                    <p>{{incid.tipo}}</p>
+
+                    <h5><strong>Descrição: </strong></h5>
+                    <p>{{incid.descricao}}</p>
                 </div>
             </div>    
             <button class="button button-calm-900 button-block" ng-click="voltar()">Voltar</button>

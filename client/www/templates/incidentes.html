@@ -4,12 +4,14 @@
         <div class="bar bar-subheader bar-light static text-center">
             <strong class="title">Ver Incidentes</strong>
         </div>
+
         <div class="im-wrapper" align="left">
         	<!-- Filtros para busca de incidentes -->
-        	<label class="item item-input item-select">
+          <label class="item item-input item-select">
     			<div class="input-label">
-					Filtrar de Tipo:
+					Filtrar por Tipo:
 				</div>
+
     			<select ng-model="tipoIncidente">
             <option></option>
       			<option>Conhecimentos</option>
@@ -29,7 +31,7 @@
   			</label>
   			<br/>
         <div class="item item-divider">
-          <p> Busca por período:
+          <p> Filtro por período:
         </div>
         <div class="row">
             <label class="item item-input">
@@ -40,15 +42,13 @@
             </label>
           </div>
         </div>
-
-  			<!-- Falta filtros -->
-
+        
         	<!-- Resultados -->
         	<div class="card" ng-repeat="incidente in incidentes 
                   | filter:{tipo:tipoIncidente}
                   | filter:{classificacao: incidClassificacao}
                   | incidentesData:dataInicio:dataFim">
-                <div class="item">
+                <div class="item item-text-wrapper">
                 	<h2><strong>Incidente:</strong> {{incidente.titulo}}</h2>
                 	<h2>
                     	<strong>Funcionario:</strong>{{incidente.nome}}
@@ -56,7 +56,7 @@
                 	<!-- <h2>
                     	<strong>Data: </strong>{{incidente.data}}
                     </h2> -->
-                </div>
+                    <br/>
                 <div class="row">
                   <div class="col-50">
                     <button class="button button-balanced button-small" 
@@ -71,7 +71,8 @@
                     </button>
                   </div>
                 </div>
-                </div>
+              </div>
+        </div>
             </div>
         </div>
     </ion-content>

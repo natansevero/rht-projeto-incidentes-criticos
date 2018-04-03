@@ -1,5 +1,5 @@
 ﻿
-app.controller('addFuncionarioCtrl', function ($scope, $http, $state, $filter, ionicMaterialInk) {
+app.controller('addFuncionarioCtrl', function ($scope, $http, $state, $filter, $ionicPopup, ionicMaterialInk) {
     ionicMaterialInk.displayEffect();
 
     $scope.funcionario = {};
@@ -15,10 +15,24 @@ app.controller('addFuncionarioCtrl', function ($scope, $http, $state, $filter, i
     	})
         .then(
         	function(resp) {
-            	console.log("Sucesso ao cadastrar: " + resp.data);
-            	$scope.funcionarios = resp.data;
+                $ionicPopup.show({
+                    title: 'Sucesso!',
+                    template: 'O funcionário foi adicionado!',
+                    buttons: [{ 
+                        text: 'OK',
+                        type: 'button-balanced'
+                    }]
+                });
         	}, function(erro) {
-            	console.log("Erro: " + erro);
+            	$ionicPopup.show({
+                    title: 'Erro!',
+                    template: 'O funcionário não pode ser adicionado no momento, \
+                                tente mais tarde!',
+                    buttons: [{ 
+                        text: 'Voltar',
+                        type: 'button-assertive'
+                    }]
+                });
 	        }
     	);
         $state.go("app.funcionarios");

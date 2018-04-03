@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 var app = angular.module('starter', ['ionic', 'ionic-material']);
 
-var apiUrl = "http://localhost:3000";
+// var apiUrl = "http://localhost:3000";
+var apiUrl = "https://rht-incidentes-criticos.herokuapp.com";
 
 app.run(function ($ionicPlatform) {
     $ionicPlatform.ready(function () {
@@ -96,6 +97,24 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         },
         cache:false
+    })
+
+    .state('app.about_incidentes', {
+        url: '/about_incidentes',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/about_incidentes.html'
+            }
+        }
+    })
+
+    .state('app.about_app', {
+        url: '/about_app',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/about_app.html'
+            }
+        }
     });
 
     // if none of the above states are matched, use this as the fallback

@@ -1,5 +1,6 @@
 
-app.controller('addIncidenteCtrl', function($scope, $stateParams, $http, $state, $filter, ionicMaterialInk) {
+app.controller('addIncidenteCtrl', function($scope, $stateParams, $http, $state, $ionicPopup, 
+    $filter, ionicMaterialInk) {
     ionicMaterialInk.displayEffect();
 
 	// Variaveis
@@ -18,10 +19,23 @@ app.controller('addIncidenteCtrl', function($scope, $stateParams, $http, $state,
     	"data": $scope.incidente
   	}).then(
       function(resp) {
-        console.log($scope.incidente);
+        $ionicPopup.show({
+          title: 'Sucesso!',
+          template: 'O incidente foi adicionado!', 
+          buttons: [{ 
+            text: 'OK',
+            type: 'button-balanced'
+          }]
+        });
     	}, function(erro) {
-       	console.log("Erro: " + erro);
-
+        $ionicPopup.show({
+          title: 'Erro!',
+          template: 'O incidente não foi adicionado!', 
+          buttons: [{ 
+            text: 'Voltar',
+            type: 'button-assertive'
+          }]
+        });
 	    }
     );
     $state.go("app.funcionarios");
