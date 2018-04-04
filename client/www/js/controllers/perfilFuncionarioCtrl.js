@@ -8,8 +8,8 @@ app.controller('perfilFuncionarioCtrl', function($scope, $state, $stateParams, $
     $scope.funcionario = {};
 
     // Adiciona incidente ao funcionario
-    $scope.addIncidente = function(idFunc) {
-    	$state.go("app.addIncidente", {"idFuncionario": idFunc});
+    $scope.addIncidente = function() {
+    	$state.go("app.addIncidente", {"id_funcionario": idFunc});
     };
 
     $scope.incidentesFuncionario = function() {

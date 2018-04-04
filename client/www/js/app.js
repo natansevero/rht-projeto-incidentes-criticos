@@ -78,7 +78,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     })
 
     .state('app.addIncidente', {
-        url: '/addIncidente/{idFuncionario}',
+        url: '/addIncidente/{id_funcionario}',
         views: {
             'menuContent': {
                 templateUrl: 'templates/addIncidente.html',

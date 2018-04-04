@@ -8,7 +8,7 @@ app.controller('detalheIncidenteCtrl', function($scope, $state, $stateParams,
 	$scope.incid = {};
 
 	$scope.voltar = function() {
-		$state.go("app.incidentes");
+		$state.go("app.funcionarios");
 	}
 
 	$http.get(apiUrl + "/incidentes/" + idIncidente)

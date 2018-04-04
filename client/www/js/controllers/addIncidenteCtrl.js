@@ -4,12 +4,13 @@ app.controller('addIncidenteCtrl', function($scope, $stateParams, $http, $state,
     ionicMaterialInk.displayEffect();
 
 	// Variaveis
-	var idFunc = $stateParams["idFuncionario"];
+	var idFunc = $stateParams.id_funcionario;
+  console.log("n " + idFunc);
   $scope.incidente = {};
 
   $scope.addIncidente = function() {
  		// organizando parametros
-    $scope.incidente.id_funcionario = idFunc;
+    $scope.incidente.id_funcionario = new Number(idFunc).valueOf();
    	$scope.incidente.data = $filter("dateFormat")($scope.incidente.data);
 
     // Chamada HTTP para add incidente
